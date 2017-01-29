@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cronentries>
+ <cron>
+   <url>/transaction/updatereservation</url>
+   <target>beta</target>
+   <description>update reservations</description>
+   <schedule>every 1 minutes</schedule>
+ </cron>
+ <cron>
+   <url>/transaction/emailupdates</url>
+   <target>beta</target>
+   <description>Email Updates</description>
+   <schedule>every 24 hours</schedule>
+ </cron>
+</cronentries>

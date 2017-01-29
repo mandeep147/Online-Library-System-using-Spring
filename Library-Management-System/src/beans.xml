@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:tx="http://www.springframework.org/schema/tx" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/tx 
+  http://www.springframework.org/schema/tx/spring-tx.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd
+  ">
+
+	<!-- Enable the component scan (auto wiring etc) for the following package -->
+	<context:component-scan base-package="edu.cmpe275.team13" />
+
+	<!-- Make sure the following is specified to enable transaction -->
+	<tx:annotation-driven />
+	<!-- <bean class="org.springframework.orm.jpa.JpaTransactionManager"
+		id="transactionManager">
+		<property name="entityManagerFactory" ref="entityManagerFactory" />
+	</bean> -->
+
+	<!-- This defines the entity manager factory with some custom properties -->
+	<!-- <bean id='entityManagerFactory' class='org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean'> 
+		<property name="persistenceUnitName" value=""/> <property name='dataSource' 
+		ref='dataSource' /> <property name="jpaPropertyMap"> <map> <entry key="eclipselink.weaving" 
+		value="false"/> </map> </property> </bean> -->
+
+	<!-- <bean id='dataSource' class='org.springframework.jdbc.datasource.DriverManagerDataSource'> 
+		<property name='driverClassName' value='com.mysql.jdbc.Driver' /> <property 
+		name='url' value='jdbc:mysql://aanbdkqle1tb2h.cc3lqfe6htaf.us-west-1.rds.amazonaws.com:3306/accounts' 
+		/> <property name="url" value="jdbc:mysql://localhost:3306/cmpe_275_term_project;" 
+		/> <property name="username" value="root" /> <property name="password" value="root" 
+		/> </bean> -->
+
+
+
+	<!-- "Email" -->
+	<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<property name="host" value="smtp.gmail.com" />
+		<property name="username" value="librarymanagement275@gmail.com" />
+		<property name="password" value="Test@123" />
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.socketFactory.port">465</prop>
+				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
+				<prop key="mail.smtp.port">465</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="mailMail" class="edu.cmpe275.util.Mailmail">
+		<property name="mailSender" ref="mailSender" />
+	</bean>
+</beans>

@@ -1,0 +1,2 @@
+serviceClass: edu.cmpe275.team13.client.GreetingService
+path: C0904CD7E79852084D5EE3F23B469547.gwt.rpc

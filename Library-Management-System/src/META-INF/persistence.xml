@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/persistence
+        http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd" version="1.0">
+
+    <persistence-unit name="cmpe275-term-project" transaction-type="RESOURCE_LOCAL">
+        <provider></provider>
+        <class>edu.cmpe275.team13.beans.Book</class>
+        <class>edu.cmpe275.team13.beans.Librarian</class>
+        <class>edu.cmpe275.team13.beans.Patron</class>
+        <class>edu.cmpe275.team13.beans.IssueBook</class>
+        <class>edu.cmpe275.team13.beans.IssueBookID</class>
+        <class>edu.cmpe275.team13.beans.WaitlistId</class>
+        <class>edu.cmpe275.team13.beans.Waitlist</class>
+        <class>edu.cmpe275.team13.beans.ReservationId</class>
+        <class>edu.cmpe275.team13.beans.Reservation</class>
+        <properties>
+            <property name="datanucleus.NontransactionalRead" value="true"/>
+            <property name="datanucleus.NontransactionalWrite" value="true"/>
+            <property name="datanucleus.ConnectionURL" value="appengine"/>
+            <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:google:mysql://cmpe-275-term-project-team-13:us-central1:cmpe-275-term-project-team-13-db1/cmpe275"/>
+            <property name="javax.persistence.jdbc.user" value="root"/>
+            <property name="javax.persistence.jdbc.password" value="cmpe275"/>
+            <property name="eclipselink.cache.type.default" value="NONE"/>
+            <property name="eclipselink.cache.shared.default" value="false"/>
+        </properties>
+    </persistence-unit>
+</persistence>
