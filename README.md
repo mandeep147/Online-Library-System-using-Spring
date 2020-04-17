@@ -1,5 +1,5 @@
 # Online-Library-System-using-Spring
-Web-based platform to manage many aspects of a university library system, including  
+Web-based platform to manage different aspects of a university library system, including  
  - cataloging,  
  - search,   
  - circulation, and   
